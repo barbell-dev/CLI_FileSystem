@@ -47,7 +47,14 @@ program
             log(chalk.red(err));
           } else {
             let finalData = data.split(" ");
-            log(chalk.green(finalData.length));
+            // log(chalk.green(finalData.length));
+            let ans = 0;
+            for (let i = 0; i < finalData.length; i++) {
+              if (finalData[i] != "") {
+                ans++;
+              }
+            }
+            log(chalk.green(ans));
             log(finalData);
             let vowelCount = 0;
             if (options.vowels) {
