@@ -46,12 +46,15 @@ program
           if (err) {
             log(chalk.red(err));
           } else {
-            let finalData = data.split(" ");
+            let finalData = data.split("\r\n");
             // log(chalk.green(finalData.length));
             let ans = 0;
             for (let i = 0; i < finalData.length; i++) {
-              if (finalData[i] != "") {
-                ans++;
+              let temp = finalData[i].split(" ");
+              for (let j = 0; j < temp.length; j++) {
+                if (temp[j] != "") {
+                  ans++;
+                }
               }
             }
             log(chalk.green(ans));
